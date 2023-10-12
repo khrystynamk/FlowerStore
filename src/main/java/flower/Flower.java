@@ -4,8 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
-@Setter @AllArgsConstructor @NoArgsConstructor
+@Setter @AllArgsConstructor @NoArgsConstructor @ToString
 public class Flower extends Item {
     @Getter
     private double sepalLength;

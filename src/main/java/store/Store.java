@@ -34,10 +34,10 @@ public class Store {
                                                 MIN_PRICE,
                                                 MAX_PRICE);
 
-        double[] prices = {25.0, 50.0, 65.0};
-        double[] lengths = {15.0, 20.0, 25.0};
+        final double[] prices = {25.0, 50.0, 65.0};
+        final double[] lengths = {15.0, 20.0, 25.0};
 
-        store.items = new ArrayList<>();
+        store.setItems(new ArrayList<>());
         store.items.add(new Flower(prices[0], lengths[0],
                         FlowerColor.PINK, FlowerType.TULIP));
         store.items.add(new Flower(prices[1], lengths[1],
