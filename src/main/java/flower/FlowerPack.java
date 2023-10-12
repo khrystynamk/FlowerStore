@@ -19,12 +19,12 @@ public class FlowerPack {
         return flower.getPrice() * ((double) quantity);
     }
 
-    public void setQuantity(int quantity) {
-        if (quantity <= 0) {
+    public void setQuantity(int newQuantity) {
+        if (newQuantity <= 0) {
             this.quantity = 1;
         }
         else {
-            this.quantity = quantity;
+            this.quantity = newQuantity;
         }
         // if (quantity < 1){
         //     this.quantity = quantity;

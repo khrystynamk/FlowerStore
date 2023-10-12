@@ -26,8 +26,11 @@ public class Store {
         double minPrice = 25;
         double maxPrice = 70;
         Store store = new Store();
-        FlowerFilter filter = new FlowerFilter(FlowerColor.RED, FlowerType.ROSE, minPrice, maxPrice);
-        // Populate the items list with some items (you should create items accordingly)
+        FlowerFilter filter = new FlowerFilter(FlowerColor.RED,
+                                                FlowerType.ROSE,
+                                                minPrice,
+                                                maxPrice);
+
         double[] prices = {25.0, 50.0, 65.0};
         double[] lengths = {15.0, 20.0, 25.0};
 
@@ -38,10 +41,8 @@ public class Store {
                         FlowerColor.PINK, FlowerType.ROSE));
         store.items.add(new Flower(prices[2], lengths[2],
                         FlowerColor.RED, FlowerType.ROSE));
-        // Use the search method to find items that match the filter
-        List<Item> foundItems = store.search(filter);
 
-        // Now, you can do something with the found items, such as printing them
+        List<Item> foundItems = store.search(filter);
         for (Item item : foundItems) {
             System.out.println("Found item: " + item);
         }
