@@ -36,7 +36,7 @@ public class FlowerFilter implements Filter {
         if (item instanceof Flower) {
             Flower flower = (Flower) item;
 
-            boolean colorMatch = flower.getColor().equals(colorToFilter);
+            boolean colorMatch = flower.getColor().equals(colorToFilter.getStringRepresentation());
             boolean typeMatch = flower.getFlowerType().equals(typeToFilter);
             boolean priceMatch = (flower.getPrice() >= minPrice 
                                 && flower.getPrice() <= maxPrice);
