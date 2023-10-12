@@ -38,8 +38,8 @@ public class FlowerFilter implements Filter {
 
             boolean colorMatch = flower.getColor().equals(colorToFilter);
             boolean typeMatch = flower.getFlowerType().equals(typeToFilter);
-            boolean priceMatch = (flower.getPrice() >= minPrice &&
-                                 flower.getPrice() <= maxPrice);
+            boolean priceMatch = (flower.getPrice() >= minPrice 
+                                && flower.getPrice() <= maxPrice);
             return (colorMatch && typeMatch && priceMatch);
         }
         return false; // Return false for items that are not flowers

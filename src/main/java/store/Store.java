@@ -7,11 +7,14 @@ import flower.Flower;
 import flower.FlowerColor;
 import flower.FlowerType;
 import flower.Item;
+import lombok.Getter;
+import lombok.Setter;
 import filters.Filter;
 import filters.FlowerFilter;
 
 public class Store {
-    List<Item> items;
+    @Getter @Setter
+    private List<Item> items;
     public List<Item> search(Filter filter) {
         List<Item> foundItems = new ArrayList<>();
         for (Item item : items) {
@@ -23,13 +26,13 @@ public class Store {
     }
 
     public static void main(String args[]) {
-        double minPrice = 25;
-        double maxPrice = 70;
+        final double MIN_PRICE = 25.0;
+        final double MAX_PRICE = 70.0;
         Store store = new Store();
         FlowerFilter filter = new FlowerFilter(FlowerColor.RED,
                                                 FlowerType.ROSE,
-                                                minPrice,
-                                                maxPrice);
+                                                MIN_PRICE,
+                                                MAX_PRICE);
 
         double[] prices = {25.0, 50.0, 65.0};
         double[] lengths = {15.0, 20.0, 25.0};
