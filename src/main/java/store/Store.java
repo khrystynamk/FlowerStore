@@ -25,7 +25,7 @@ public class Store {
         return foundItems;
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         final double MIN_PRICE = 25.0;
         final double MAX_PRICE = 70.0;
         Store store = new Store();
@@ -34,15 +34,15 @@ public class Store {
                                                 MIN_PRICE,
                                                 MAX_PRICE);
 
-        final double[] prices = {25.0, 50.0, 65.0};
-        final double[] lengths = {15.0, 20.0, 25.0};
+        final double[] PRICES = {25.0, 50.0, 65.0};
+        final double[] LENGTHS = {15.0, 20.0, 25.0};
 
         store.setItems(new ArrayList<>());
-        store.items.add(new Flower(prices[0], lengths[0],
+        store.items.add(new Flower(PRICES[0], LENGTHS[0],
                         FlowerColor.PINK, FlowerType.TULIP));
-        store.items.add(new Flower(prices[1], lengths[1],
+        store.items.add(new Flower(PRICES[1], LENGTHS[1],
                         FlowerColor.PINK, FlowerType.ROSE));
-        store.items.add(new Flower(prices[2], lengths[2],
+        store.items.add(new Flower(PRICES[2], LENGTHS[2],
                         FlowerColor.RED, FlowerType.ROSE));
 
         List<Item> foundItems = store.search(filter);
