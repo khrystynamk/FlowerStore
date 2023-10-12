@@ -15,7 +15,7 @@ public class Flower extends Item{
     @Getter
     private FlowerType flowerType;
 
-    public Flower(Flower flower){
+    public Flower(Flower flower) {
 
         this.price = flower.price;
         this.sepalLength = flower.sepalLength;
@@ -23,8 +23,8 @@ public class Flower extends Item{
         this.color = flower.color;
     }
 
-    public Flower(double price, double sepalLength, FlowerColor color, FlowerType type){
-
+    public Flower(double price, double sepalLength,
+                 FlowerColor color, FlowerType type) {
         this.price = price;
         this.sepalLength = sepalLength;
         this.flowerType = type;
@@ -35,7 +35,7 @@ public class Flower extends Item{
         return color.toString();
     }
 
-    public double getPrice(){
+    public double getPrice() {
         return price;
     }
 }

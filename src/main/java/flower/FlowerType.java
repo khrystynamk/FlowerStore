@@ -8,7 +8,7 @@ public enum FlowerType {
 
 
     // To randomly generate a FlowerType
-    public static FlowerType randomType(){
+    public static FlowerType randomType() {
         FlowerType[] types = values();
         return types[RANDOM_GENERATOR.nextInt(types.length)];
     }

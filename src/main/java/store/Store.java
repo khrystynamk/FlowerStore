@@ -12,24 +12,32 @@ import filters.FlowerFilter;
 
 public class Store {
     List<Item> items;
-    public List<Item> search(Filter filter){
+    public List<Item> search(Filter filter) {
         List<Item> foundItems = new ArrayList<>();
-        for (Item item : items){
-            if (filter.match(item)){
+        for (Item item : items) {
+            if (filter.match(item)) {
                 foundItems.add(item);
             }
         }
         return foundItems;
     }
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
+        double minPrice = 25;
+        double maxPrice = 70;
         Store store = new Store();
-        FlowerFilter filter = new FlowerFilter(FlowerColor.RED, FlowerType.ROSE, 25, 70);
+        FlowerFilter filter = new FlowerFilter(FlowerColor.RED, FlowerType.ROSE, minPrice, maxPrice);
         // Populate the items list with some items (you should create items accordingly)
+        double[] prices = {25.0, 50.0, 65.0};
+        double[] lengths = {15.0, 20.0, 25.0};
+
         store.items = new ArrayList<>();
-        store.items.add(new Flower(25.0, 15.0, FlowerColor.PINK, FlowerType.TULIP));
-        store.items.add(new Flower(50.0, 20.0, FlowerColor.PINK, FlowerType.ROSE));
-        store.items.add(new Flower(65.0, 25.0, FlowerColor.RED, FlowerType.ROSE));
+        store.items.add(new Flower(prices[0], lengths[0],
+                        FlowerColor.PINK, FlowerType.TULIP));
+        store.items.add(new Flower(prices[1], lengths[1],
+                        FlowerColor.PINK, FlowerType.ROSE));
+        store.items.add(new Flower(prices[2], lengths[2],
+                        FlowerColor.RED, FlowerType.ROSE));
         // Use the search method to find items that match the filter
         List<Item> foundItems = store.search(filter);
 

@@ -10,17 +10,22 @@ public class FlowerPack {
     @Getter
     private int quantity = 1;
 
-    public FlowerPack(Flower flower, int quantity){
+    public FlowerPack(Flower flower, int quantity) {
         this.flower = new Flower(flower);
         this.setQuantity(quantity);
     }
 
-    public double getPrice(){
+    public double getPrice() {
         return flower.getPrice() * ((double) quantity);
     }
 
-    public void setQuantity(int quantity){
-        this.quantity = quantity <= 0 ? 1 : quantity;
+    public void setQuantity(int quantity) {
+        if (quantity <= 0) {
+            this.quantity = 1;
+        }
+        else {
+            this.quantity = quantity;
+        }
         // if (quantity < 1){
         //     this.quantity = quantity;
         // }

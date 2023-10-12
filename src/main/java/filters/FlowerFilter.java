@@ -4,7 +4,7 @@ import flower.FlowerType;
 import flower.FlowerColor;
 import flower.Item;
 
-public class FlowerFilter implements Filter{
+public class FlowerFilter implements Filter {
     private FlowerColor colorToFilter;
     private FlowerType typeToFilter;
     // private double sepalLengthToFilter;
@@ -12,7 +12,10 @@ public class FlowerFilter implements Filter{
     private double maxPrice = 0;
 
     // (double sepalLengthToFilter, double minPrice, double maxPrice)
-    public FlowerFilter(FlowerColor colorToFilter, FlowerType typeToFilter, double minPrice, double maxPrice) {
+    public FlowerFilter(FlowerColor colorToFilter,
+                        FlowerType typeToFilter,
+                        double minPrice,
+                        double maxPrice) {
         this.colorToFilter = colorToFilter;
         this.typeToFilter = typeToFilter;
         // this.sepalLengthToFilter = sepalLengthToFilter;
@@ -35,8 +38,8 @@ public class FlowerFilter implements Filter{
 
             boolean colorMatch = flower.getColor().equals(colorToFilter);
             boolean typeMatch = flower.getFlowerType().equals(typeToFilter);
-            // boolean sepalLengthMatch = (sepalLengthToFilter == flower.getSepalLength());
-            boolean priceMatch = (flower.getPrice() >= minPrice && flower.getPrice() <= maxPrice);
+            boolean priceMatch = (flower.getPrice() >= minPrice &&
+                                 flower.getPrice() <= maxPrice);
             return (colorMatch && typeMatch && priceMatch);
         }
         return false; // Return false for items that are not flowers
