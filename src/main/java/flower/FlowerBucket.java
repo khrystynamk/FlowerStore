@@ -14,7 +14,7 @@ public class FlowerBucket extends Item{
     public double getPrice(){
         double price = 0;
         for (FlowerPack flowerPack : flowerBouquet){
-            price = price + flowerPack.getPrice();
+            price += flowerPack.getPrice();
         }
         return price;
     }

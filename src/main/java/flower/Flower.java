@@ -6,11 +6,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter @AllArgsConstructor @NoArgsConstructor
-public class Flower {
+public class Flower extends Item{
     @Getter
     private double sepalLength;
     private FlowerColor color;
-    @Getter @Setter
+    @Setter
     private double price;
     @Getter
     private FlowerType flowerType;
@@ -23,14 +23,19 @@ public class Flower {
         this.color = flower.color;
     }
 
+    public Flower(double price, double sepalLength, FlowerColor color, FlowerType type){
+
+        this.price = price;
+        this.sepalLength = sepalLength;
+        this.flowerType = type;
+        this.color = color;
+    }
+
     public String getColor() {
         return color.toString();
     }
 
-    public boolean equals(Flower other) {
-        if (this == other) {
-            return true;
-        }
-        return this.flowerType == other.flowerType && this.color == other.color && this.price == other.price && this.sepalLength == other.sepalLength;
+    public double getPrice(){
+        return price;
     }
 }

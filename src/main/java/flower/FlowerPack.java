@@ -7,6 +7,7 @@ import lombok.Setter;
 public class FlowerPack {
     // private static final int MAX_QUANTITY = 100;
     private Flower flower;
+    @Getter
     private int quantity = 1;
 
     public FlowerPack(Flower flower, int quantity){
@@ -15,7 +16,7 @@ public class FlowerPack {
     }
 
     public double getPrice(){
-        return flower.getPrice() * (double) quantity;
+        return flower.getPrice() * ((double) quantity);
     }
 
     public void setQuantity(int quantity){
